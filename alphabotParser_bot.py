@@ -3,6 +3,9 @@ from alphabotParser import main
 
 
 class MyClient(discord.Client):
+    async def on_ready(self):
+        print('Logged on as {0}!'.format(self.user))
+
     async def on_message(self,message):
         print('Message from {0.author}: {0.content}'.format(message))
 
@@ -12,11 +15,10 @@ class MyClient(discord.Client):
             try:
                 await channel.send(main())
             except Exception:
-                print('нет новых проектов,ждем')
                 continue
             time.sleep(1)
 
 
 
 client = MyClient()
-client.run('MTAyNzgxNDg0MTE0NDA0OTY3NA.GvMFLq.nqLOPhoCwnZTbH_XkPkdaRdiN0HY0vYS0QblaM')
+client.run('MTAyNzgxNDg0MTE0NDA0OTY3NA.Gx2pLl.hFOf15Dt4GiFLah7fDuz7jQqjykKGEQYiLLG6s')
