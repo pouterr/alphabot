@@ -10,7 +10,7 @@ class MyClient(discord.Client):
         print('Message from {0.author}: {0.content}'.format(message))
 
     async def on_ready(self):
-        channel = self.get_channel(1027814569697087560)
+        channel = self.get_channel(YOUR_CHANNEL_ID_WITHOUT_BRACKETS)
         while True:
             try:
                 await channel.send(main())
@@ -21,4 +21,4 @@ class MyClient(discord.Client):
 
 
 client = MyClient()
-client.run('YOUR TOKEN')
+client.run('YOUR_TOKEN')
