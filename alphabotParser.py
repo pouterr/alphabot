@@ -16,8 +16,9 @@ def main():
     for project in projects:
         if project['_id'] not in projects_list_ids :
             projects_list_ids.append(project["_id"])
-            url1 = "https://www.alphabot.app/"+ project['slug']
-            res = f'----------------------------\n {url1}'
+            project_url = "https://www.alphabot.app/"+ project['slug']
+            name = project['name']
+            res = f'----------------------------\n{name}\n{project_url}'
             return res
 if __name__ == '__main__':
     main() 
