@@ -13,8 +13,8 @@ def main():
         projects_list_ids.clear()
     req = requests.get(url, headers=headers)
     projects = req.json()
-    for project in projects:
-        if project['_id'] not in projects_list_ids and project['type'] == 'fcfs' :
+    for project in reversed(projects):
+        if project['_id'] not in projects_list_ids:
             projects_list_ids.append(project["_id"])
             project_url = "https://www.alphabot.app/"+ project['slug']
             name = project['name']
